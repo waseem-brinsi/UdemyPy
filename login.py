@@ -1,6 +1,6 @@
 import time
 from cookies import load_cookie
-email ="your_emai"
+email ="your_gmail_emai"
 Ude_password ="Udemy_password"
 g_password ="gmail_password"
 def login_udemy(browser):
@@ -18,7 +18,10 @@ def login_udemy(browser):
         time.sleep(30)
 def login_gmail(browser):
     browser.get("https://accounts.google.com")
-    load_cookie(browser)
+    try:
+    	load_cookie(browser)
+    except:
+    	pass
     browser.find_element_by_xpath("//input[@id='identifierId']").send_keys(email)
     browser.find_element_by_xpath("//div[@id='identifierNext']").click()
     #browser.implicitly_wait(20)
