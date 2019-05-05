@@ -4,7 +4,10 @@ email ="your_gmail_emai"
 Ude_password ="Udemy_password"
 g_password ="gmail_password"
 def login_udemy(browser):
-    load_cookie(browser)
+    try:
+        load_cookie(browser)
+    except:
+        pass
     try:
         browser.find_element_by_name("email").send_keys(email)
         browser.find_element_by_name("password").send_keys(Ude_password)
